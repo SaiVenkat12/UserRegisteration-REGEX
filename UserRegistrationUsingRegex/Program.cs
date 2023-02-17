@@ -12,6 +12,7 @@ namespace UserRegistrationUsingRegex
         {
             Console.WriteLine("User Registration Using Regular Expression");
             ValidatingUser.FName();
+            ValidatingUser.LName();
             Console.ReadLine();
         }
     }
