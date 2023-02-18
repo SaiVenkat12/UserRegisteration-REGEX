@@ -45,6 +45,18 @@ namespace UserRegistrationUsingRegex
             else
                 Console.WriteLine("Email is InValid");
         }
+        public static void MobileNumber()
+        {
+            string pattren = "^[0-9]{2}[ ]*[6-9]{1}[0-9]{9}$";
+            Console.WriteLine("Enter the Mobile Number :");
+            string number = Console.ReadLine();
+            if (Regex.IsMatch(number, pattren))
+            {
+                Console.WriteLine("Mobile Number is Valid");
+            }
+            else
+                Console.WriteLine("Mobile Number is InValid");
+        }
 
     }
 }
