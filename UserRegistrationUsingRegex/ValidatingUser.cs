@@ -59,7 +59,7 @@ namespace UserRegistrationUsingRegex
         }
         public static void Password()
         {
-            string pattren = "^^[A-Za-z0-9]{8,}$";
+            string pattren = "(?=.*[A-Z])[A-za-z0-9]{8,}$";
             Console.WriteLine("Enter the Password :");
             string password = Console.ReadLine();
             if (Regex.IsMatch(password, pattren))
