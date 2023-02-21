@@ -15,7 +15,7 @@ namespace UserRegistrationUsingRegex
             bool flag = true;
             while(flag)
             {
-                Console.WriteLine("\n1.First Name \n2.Last Name \n3.Email \n4.Check Multiple Emails \n22.Exit");
+                Console.WriteLine("\n1.First Name \n2.Last Name \n3.Email  \n22.Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -29,13 +29,6 @@ namespace UserRegistrationUsingRegex
                         Console.WriteLine("Enter the Email Name :");
                         string eMail = Console.ReadLine();
                         ValidatingUser.Email(eMail);
-                        break;
-                    case 4:
-                        foreach (string s in email)
-                        {
-                            Console.Write("\n" + s + " -");
-                            ValidatingUser.Email(s);
-                        }
                         break;
                     case 22:
                         flag = false;
