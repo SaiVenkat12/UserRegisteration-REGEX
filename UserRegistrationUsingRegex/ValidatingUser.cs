@@ -35,8 +35,7 @@ namespace UserRegistrationUsingRegex
         }
         public static void Email(string eMail)
         {
-            string pattren = "^[a-zA-Z0-9]([.+-_]?[a-zA-z0-9])*@[0-9a-zA-Z]+.[a-zA-Z]{2,}([.]{0,1}[A-Za-z]{2,})+([.]{0,1}[A-Za-z]{2,})*[,]?$";
-            
+            string pattren = "^[a-zA-Z0-9]{1,}[.+-_]?[a-zA-z0-9]{1,}[@]{1}[0-9a-zA-Z]+.[a-zA-Z]{2,}([.]{0,1}[A-Za-z]{2,})+([.]{0,1}[A-Za-z]{2,})*[,]?$";
             if (Regex.IsMatch(eMail, pattren))
             {
                 Console.WriteLine("Email is Valid");
