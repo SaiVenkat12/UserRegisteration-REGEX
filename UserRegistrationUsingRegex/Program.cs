@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace UserRegistrationUsingRegex
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("User Registration Using Regular Expression");
             string[] email = new string[] { "abc.xyz@bl.co.in", "abc-100@yahoo.com,", "abc.100@yahoo.com", "abc@100yahoo.com", "abc@gmail.com.com", "abc.100@abc.com.au", "ABC1@APPLE.com,", "asc@kd@.com", "bc@gmail.com,in", "abc-100@.com,", "abc@gmail.com.", "abc@%*.com", "abc..nn@gmail.com.", "abc@%*.com", "abc@gmail.com.1a" };
@@ -20,10 +20,14 @@ namespace UserRegistrationUsingRegex
                 switch (choice)
                 {
                     case 1:
-                        ValidatingUser.FName();
+                        Console.WriteLine("Enter the First Name :");
+                        string fName = Console.ReadLine();
+                        ValidatingUser.FName(fName);
                         break;
                     case 2:
-                        ValidatingUser.LName();
+                        Console.WriteLine("Enter the Lastt Name :");
+                        string lName = Console.ReadLine();
+                        ValidatingUser.LName(lName);
                         break;
                     case 3:
                         Console.WriteLine("Enter the Email Name :");
@@ -34,14 +38,18 @@ namespace UserRegistrationUsingRegex
                         foreach (string s in email)
                         {
                             Console.Write("\n" + s + " -");
-                            ValidatingUser.Email(s);
+                            Console.WriteLine(ValidatingUser.Email(s));
                         }
                         break;
                     case 5:
-                        ValidatingUser.MobileNumber();
+                        Console.WriteLine("Enter the Mobile Number :");
+                        string number = Console.ReadLine();
+                        ValidatingUser.MobileNumber(number);
                         break;
                     case 6:
-                        ValidatingUser.Password();
+                        Console.WriteLine("Enter the Password :");
+                        string password = Console.ReadLine();
+                        ValidatingUser.Password(password);
                         break;
                     case 22:
                         flag = false;

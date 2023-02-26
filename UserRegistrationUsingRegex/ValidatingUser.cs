@@ -7,65 +7,60 @@ using System.Threading.Tasks;
 
 namespace UserRegistrationUsingRegex
 {
-    internal class ValidatingUser
+    public class ValidatingUser
     {
-        public static void FName()
+        public static string FName(string fName)
         {
             string pattren = "^[A-Z]{1}[a-z]{2,}$";
-            Console.WriteLine("Enter the First Name :");
-            string fName=Console.ReadLine();
+            
             if (Regex.IsMatch(fName, pattren))
             {
-                Console.WriteLine("Name is Valid");
+                return"Happy";
             }
             else
-                Console.WriteLine("Name is InValid");
+                return "Sad";
         }
-        public static void LName()
+        public static string LName(string lName)
         {
             string pattren = "^[A-Z]{1}[a-z]{2,}$";
-            Console.WriteLine("Enter the First Name :");
-            string lName = Console.ReadLine();
+            
             if (Regex.IsMatch(lName, pattren))
             {
-                Console.WriteLine("Name is Valid");
+                return "Happy";
             }
             else
-                Console.WriteLine("Name is InValid");
+                return "Sad";
         }
-        public static void Email(string eMail)
+        public static string Email(string eMail)
         {
             string pattren = "^[a-zA-Z0-9]{1,}[.+-_]?[a-zA-z0-9]{1,}[@]{1}[0-9a-zA-Z]+.[a-zA-Z]{2,}([.]{0,1}[A-Za-z]{2,})+([.]{0,1}[A-Za-z]{2,})*[,]?$";
             if (Regex.IsMatch(eMail, pattren))
             {
-                Console.WriteLine("Email is Valid");
+                return "Happy";
             }
             else
-                Console.WriteLine("Email is InValid");
+                return "Sad";
         }
-        public static void MobileNumber()
+        public static string MobileNumber(string number)
         {
-            string pattren = "^[0-9]{2}[ ]*[6-9]{1}[0-9]{9}$";
-            Console.WriteLine("Enter the Mobile Number :");
-            string number = Console.ReadLine();
+            string pattren = "^[0-9]{2}[ ][6-9]{1}[0-9]{9}$";
+            
             if (Regex.IsMatch(number, pattren))
             {
-                Console.WriteLine("Mobile Number is Valid");
+                return "Happy";
             }
             else
-                Console.WriteLine("Mobile Number is InValid");
+                return "Sad";
         }
-        public static void Password()
+        public static string Password(string password)
         {
             string pattren = "(?=.*[A-Z])(?=.*[0-9])(?=.*[.,/+_@!#$%&*]{1}).{8,}$";
-            Console.WriteLine("Enter the Password :");
-            string password = Console.ReadLine();
-            if (Regex.IsMatch(password, pattren))
+            if(Regex.IsMatch(password,pattren))
             {
-                Console.WriteLine("Password is Valid");
+                return "Happy";
             }
             else
-                Console.WriteLine("Password is InValid");
+                return "Sad";
         }
     }
 }
