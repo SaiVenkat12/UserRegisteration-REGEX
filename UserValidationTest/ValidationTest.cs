@@ -9,9 +9,9 @@ namespace UserValidationTest
         [DataRow("Xyc", "Happy")]
         [DataRow("abcjd", "Sad")]
         [DataRow("RaLL", "Sad")]
-        public void Validating_First_Name(string fname,string expected)
+        public void Validating_First_Name(string fname, string expected)
         {
-           
+
             ValidatingUser user = new ValidatingUser();
             string actual = ValidatingUser.FName(fname);
             Assert.AreEqual(expected, actual);
@@ -64,5 +64,24 @@ namespace UserValidationTest
             string actual = ValidatingUser.Password(pass);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [DataRow(new string[] { "abc.xyz@bl.co.in", "abc-100@yahoo.com,", "abc.100@yahoo.com", "abc@100yahoo.com", "abc@gmail.com.com", "abc.100@abc.com.au", "ABC1@APPLE.com," }, "Happy")]
+        [DataRow(new string[] { "asc@kd@.com", "bc@gmail.com,in", "abc-100@.com,", "abc@gmail.com.", "abc@%*.com", "abc..nn@gmail.com.", "abc@%*.com", "abc@gmail.com.1a" }, "Sad")]
+        public void Validating_Mutiple_Email(string[] email, string expected)
+        {
+
+            ValidatingUser user = new ValidatingUser();
+
+            foreach (string s in email)
+            {
+                Console.Write("\n" + s + " -");
+                string actual = ValidatingUser.Email(s);
+                Assert.AreEqual(expected, actual);
+            }
+
+
+        }
     }
+
 }
